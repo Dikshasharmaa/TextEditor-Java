@@ -20,11 +20,15 @@ class TextEditor extends Frame implements ActionListener {
         Menu m1 = new Menu("File");
         Menu m2 = new Menu("Edit");
         Menu m3 = new Menu("Tools");
-        Menu m4 = new Menu("Help");
+        Menu m4 = new Menu("Find");
+        Menu m5 = new Menu("Replace");
+        Menu m6 = new Menu("Help");
         mb.add(m1);
         mb.add(m2);
         mb.add(m3);
         mb.add(m4);
+        mb.add(m5);
+        mb.add(m6);
         MenuItem mi1[] = {
                 new MenuItem("New"), new MenuItem("Open"), new MenuItem("Save"), new MenuItem("Save As"),
                 new MenuItem("Page Setup"), new MenuItem("Print"), new MenuItem("Exit")
@@ -36,7 +40,8 @@ class TextEditor extends Frame implements ActionListener {
                 new MenuItem("Time Stamp") };
         MenuItem mi3[] = { new MenuItem("Choose Font"), new MenuItem("Compile"),
                 new MenuItem("Run") };
-        MenuItem mi4[] = { new MenuItem("Help Topics"),
+        MenuItem mi4[] = {new MenuItem(),new MenuItem(),new MenuItem()};
+        MenuItem mi6[] = { new MenuItem("Help Topics"),
                 new MenuItem("About TextEditor") };
         for (int i = 0; i < mi1.length; i++) {
             m1.add(mi1[i]);
@@ -52,9 +57,9 @@ class TextEditor extends Frame implements ActionListener {
             m3.add(mi3[i]);
             mi3[i].addActionListener(this);
         }
-        for (int i = 0; i < mi4.length; i++) {
-            m4.add(mi4[i]);
-            mi4[i].addActionListener(this);
+        for (int i = 0; i < mi6.length; i++) {
+            m4.add(mi6[i]);
+            mi6[i].addActionListener(this);
         }
         MyWindowsAdapter mw = new MyWindowsAdapter(this);
         addWindowListener(mw);

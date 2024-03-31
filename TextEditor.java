@@ -40,7 +40,9 @@ class TextEditor extends Frame implements ActionListener {
                 new MenuItem("Time Stamp") };
         MenuItem mi3[] = { new MenuItem("Choose Font"), new MenuItem("Compile"),
                 new MenuItem("Run") };
-        MenuItem mi4[] = {new MenuItem(),new MenuItem(),new MenuItem()};
+        MenuItem mi4[] = {new MenuItem("Find")};
+        MenuItem mi5[] = {new MenuItem("Replace"),new MenuItem("Replace All")};
+
         MenuItem mi6[] = { new MenuItem("Help Topics"),
                 new MenuItem("About TextEditor") };
         for (int i = 0; i < mi1.length; i++) {
@@ -57,8 +59,17 @@ class TextEditor extends Frame implements ActionListener {
             m3.add(mi3[i]);
             mi3[i].addActionListener(this);
         }
+        for (int i = 0; i < mi4.length; i++) {
+            m4.add(mi4[i]);
+            mi4[i].addActionListener(this);
+        }
+        for (int i = 0; i < mi5.length; i++) {
+            m5.add(mi5[i]);
+            mi5[i].addActionListener(this);
+        }
+
         for (int i = 0; i < mi6.length; i++) {
-            m4.add(mi6[i]);
+            m6.add(mi6[i]);
             mi6[i].addActionListener(this);
         }
         MyWindowsAdapter mw = new MyWindowsAdapter(this);
@@ -159,6 +170,10 @@ class TextEditor extends Frame implements ActionListener {
             d1.setVisible(true);
             setSize(500, 500);
         }
+//        if (arg.equals("Replace")) {
+//
+//            //ta.setText(ta.getText().replaceAll());
+//        }
     }
     public static void main(String args[]) {
         TextEditor to = new TextEditor();
